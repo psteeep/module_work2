@@ -14,17 +14,19 @@ int main() {
 
     std::string line;
 
+    std::string S = "";
     std::ifstream in("testing.txt"); 
     if (in.is_open())
     {
         while (getline(in, line))
         {
+            S += line;
             std::cout << line << std::endl;
         }
     }
     in.close();
  
-    std::string S = line;
+
     char l1;
     char l2;
     
