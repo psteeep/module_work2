@@ -12,7 +12,19 @@ int main() {
     //    out << "asdkjqjdlkqejdeifjewlfkwjelk" << std::endl;
     //}
 
-    char S[] = "dwdwefweqf23ewdkdlwjwlfjwq0wsad"; 
+    std::string line;
+
+    std::ifstream in("testing.txt"); 
+    if (in.is_open())
+    {
+        while (getline(in, line))
+        {
+            std::cout << line << std::endl;
+        }
+    }
+    in.close();
+ 
+    std::string S = line;
     char l1;
     char l2;
     
@@ -24,15 +36,13 @@ int main() {
     std::cin >> l2;
 
 
-    for (int i = 0; i < strlen(S); i++) {
+    for (int i = 0; i < S.size(); i++) {
         if (S[i] == l1) {
             num_l1++;
         }
         if (S[i] == l2) {
             num_l2++;
         }
-        else
-            std::cout << "no like that" << std::endl;
     }
     std::cout << "symbol " << l1 << " = " << num_l1 << " times!!" << std::endl;
     std::cout << "symbol " << l2 << " = " << num_l2 << " times!!" << std::endl;
